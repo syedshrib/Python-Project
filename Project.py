@@ -111,10 +111,10 @@ class PetCareApp:
             return
 
         # Password strength validation
-        password_regex = r'^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[A-Za-z\d]{8,}$'  # Modify as needed
+        password_regex = r'^(?=.*\d).{6,}$'
         if not re.fullmatch(password_regex, password):
             messagebox.showerror("Error",
-                                 "Password must be at least 8 characters long and include one lowercase letter, one uppercase letter, and one digit.")
+                                 "Password must be at least 6 characters long and include one digit.")
             return
 
         conn = self.connect_db()
